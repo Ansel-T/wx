@@ -5,16 +5,16 @@
  * @param {*} res 返回的data
  */
 const checkCode = (resolve, res) => {
-  if (+res.ret === 200) {
+  if (+res.statusCode === 200) {
     resolve(res)
-  } else if (+res.ret === 400) {
+  } else if (+res.statusCode === 400) {
     wx.showToast({
       title: res.msg,
       icon: 'none',
       duration: 2000,
       mask: true
     })
-  } else if (+res.ret === 406) {
+  } else if (+res.statusCode === 406) {
     wx.showToast({
       title: res.msg,
       icon: 'none',
@@ -32,18 +32,16 @@ const checkCode = (resolve, res) => {
  * @param  {Object} params 参数
  * @return {Promise}
  */
-const apiUrl = "https://cnodejs.org/api/v1/ ";
+const apiUrl = "https://cnodejs.org/api/v1/";
 const http = (path, params) => {
-
   return new Promise((resolve, reject) => {
     wx.request({
-      url: apiUrl + path,
+      url: `${apiUrl}${path}`,
       data: Object.assign({}, params),
       header: { 'Content-Type': 'json' },
       method: params.method || 'get',
       success: function (res) {
-        console.log(res)
-        checkCode(resolve, res.data)
+        checkCode(resolve, res)
         wx.hideLoading()
       },
       fail: function (err) {

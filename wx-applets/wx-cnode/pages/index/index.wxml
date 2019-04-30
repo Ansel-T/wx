@@ -7,23 +7,22 @@
     <view>招聘</view>
   </view>
   <view>
-    <view class="card-item">
+    <view class="card-item mb20">
         <navigator url="/pages/log">
             <view class="user-info">
                 <image src="https://avatars2.githubusercontent.com/u/227713?v=4&s=120" class="user-img"></image>
                 <view class="user-name f24 ml20 mt15">名字名字</view>
             </view>
-            <view class="time">{{list.match_status || list.time}}{{list.match_time}}</view>
-            <view class="team">
-                <view class="team-info">
-                    <view class="team-score">{{list.homescore }}</view>
-                    <view class="team-name">{{list.hometeamname}}</view>
-                </view>
-                <image src="{{list.hometeamlogo}}" class="team-logo"></image>
+            <view class="mt20 mb20 f30 topic-title">【非技术】提问一个关于社保的问题，大佬们帮帮忙</view>
+        </navigator>
+    </view>
+    <view class="card-item mb20">
+        <navigator url="/pages/log">
+            <view class="user-info">
+                <image src="https://avatars2.githubusercontent.com/u/227713?v=4&s=120" class="user-img"></image>
+                <view class="user-name f24 ml20 mt15">名字名字</view>
             </view>
-            <view class="team-news" wx:if="{{list.title}}">
-                <text class="iangle">战报</text> {{list.title}}
-            </view>
+            <view class="mt20 mb20 f30 topic-title">【非技术】提问一个关于社保的问题，大佬们帮帮忙</view>
         </navigator>
     </view>
   </view>

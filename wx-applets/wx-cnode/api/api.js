@@ -1,11 +1,11 @@
 import {http} from './http';
 
-function userLogin(params) {
+function topics(params) {
   return http('topics', params).then(res => res)
 }
 
 
 module.exports = {
-  userLogin
+  topics
 }
   
