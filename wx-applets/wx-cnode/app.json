@@ -1,0 +1,38 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#1caaff",
+    "position": "bottom",
+    "borderStyle": "block",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/images/home.png",
+        "selectedIconPath": "static/images/home.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "关于",
+        "iconPath": "static/images/home.png",
+        "selectedIconPath": "static/images/home.png"
+      }
+    ]
+  },
+  "window":{
+    "color":"#fff",
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "cndoe",
+    "navigationBarTextStyle":"black"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

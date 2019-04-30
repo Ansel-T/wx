@@ -1,0 +1,26 @@
+/**index.wxss**/
+ 
+.header-nav{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 28rpx;
+  color:#fff;
+  display: flex;
+  justify-content: space-around;
+  background-color: #1caaff;
+}
+.card-item{
+  padding: 20rpx;
+}
+.card-item .user-info{
+  display: flex;
+}
+.card-item .user-info .user-img{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+.card-item .user-info .user-name{
+  /* font-size: 24rpx; */
+}
