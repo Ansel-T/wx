@@ -6,23 +6,14 @@
     <view>分享</view>
     <view>招聘</view>
   </view>
-  <view>
-    <view class="card-item mb20">
-        <navigator url="/pages/log">
+  <view wx:if="{{topicList}}">
+    <view wx:for="{{topicList}}"  wx:key="{{i}}" class="card-item mb20">
+        <navigator url="/pages/logs/logs">
             <view class="user-info">
-                <image src="https://avatars2.githubusercontent.com/u/227713?v=4&s=120" class="user-img"></image>
-                <view class="user-name f24 ml20 mt15">名字名字</view>
+                <image src="{{item.author.avatar_url}}" class="user-img"></image>
+                <view class="user-name f24 ml20 mt15">{{item.author.loginname}}</view>
             </view>
-            <view class="mt20 mb20 f30 topic-title">【非技术】提问一个关于社保的问题，大佬们帮帮忙</view>
-        </navigator>
-    </view>
-    <view class="card-item mb20">
-        <navigator url="/pages/log">
-            <view class="user-info">
-                <image src="https://avatars2.githubusercontent.com/u/227713?v=4&s=120" class="user-img"></image>
-                <view class="user-name f24 ml20 mt15">名字名字</view>
-            </view>
-            <view class="mt20 mb20 f30 topic-title">【非技术】提问一个关于社保的问题，大佬们帮帮忙</view>
+            <view class="mt20 mb20 f30 topic-title">{{item.title}}</view>
         </navigator>
     </view>
   </view>
