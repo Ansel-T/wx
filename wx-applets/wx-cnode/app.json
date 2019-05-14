@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -7,7 +7,7 @@
     "color": "#333",
     "selectedColor": "#1caaff",
     "position": "bottom",
-    "borderStyle": "block",
+    "borderStyle": "black",
     "list": [
       {
         "pagePath": "pages/index/index",
@@ -23,16 +23,16 @@
       }
     ]
   },
-  "window":{
-    "color":"#fff",
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "cndoe",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "networkTimeout": {
     "request": 10000,
     "downloadFile": 10000
   },
-  "debug": true
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
 }

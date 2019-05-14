@@ -13,8 +13,11 @@ Page({
       limit:10,
     }
     console.log(this);
-    app.api.topics('topics', parmas).then(res => {
-      console.log(res);
+    app.api.topics(parmas).then(res => {
+      console.log(res.data.data);
+      this.setData({
+        topicList: res.data.data,
+      })
     })
     .catch(e => {
       console.error(e)
