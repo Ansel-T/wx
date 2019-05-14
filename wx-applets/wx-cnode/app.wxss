@@ -1,5 +1,12 @@
 /**app.wxss**/
 
+@import '/static/fonts/iconfont.wxss';
+
+.icon-tt::after{
+  content: '123',
+  
+}
+
 .center{margin:0 auto;}
 .left{float:left;}
 .right{float:right;}
@@ -175,3 +182,4 @@ sub{vertical-align:text-bottom;}
 .v-m{vertical-align:middle;}
 .v-t{vertical-align:top;}
 .v-b{vertical-align:bottom;}
+.v-bb{vertical-align:sub;}

@@ -8,16 +8,25 @@
   </view>
   <view>
     <view class="card-item mb20">
-        <navigator url="/pages/log">
+        <navigator url="/pages/logs/logs" open-type="navigate" hover-class="none">
             <view class="user-info">
                 <image src="https://avatars2.githubusercontent.com/u/227713?v=4&s=120" class="user-img"></image>
                 <view class="user-name f24 ml20 mt15">名字名字</view>
             </view>
             <view class="mt20 mb20 f30 topic-title">【非技术】提问一个关于社保的问题，大佬们帮帮忙</view>
+            <view class='card-item-b f24 fix'>
+              <view class='left v-t'>
+                <text class='mr20'> <text class='iconfont icon-liulan v-bb f40'></text> 1120</text>
+                <text> <text class='iconfont icon-xiaoxi v-m '></text> 320</text>
+              </view>
+              <view class='right'>
+              1 小时前
+              </view>
+            </view>
         </navigator>
     </view>
     <view class="card-item mb20">
-        <navigator url="/pages/log">
+        <navigator url="/pages/logs/logs" open-type="navigate" hover-class="none">
             <view class="user-info">
                 <image src="https://avatars2.githubusercontent.com/u/227713?v=4&s=120" class="user-img"></image>
                 <view class="user-name f24 ml20 mt15">名字名字</view>
