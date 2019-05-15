@@ -1,0 +1,4 @@
+<!--pages/my/my.wxml-->
+<view class="container ">
+  <text class="main-color ac">我的</text>
+</view>

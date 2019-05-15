@@ -1,32 +1,48 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/message/message",
+    "pages/my/my",
+    "pages/write/write",
+    "pages/topicDetial/detial",
     "pages/logs/logs"
   ],
   "tabBar": {
     "color": "#333",
-    "selectedColor": "#1caaff",
+    "selectedColor": "#2279fe",
     "position": "bottom",
     "borderStyle": "black",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "static/images/home.png",
+        "iconPath": "static/images/home_light.png",
         "selectedIconPath": "static/images/home.png"
       },
       {
-        "pagePath": "pages/logs/logs",
-        "text": "关于",
-        "iconPath": "static/images/home.png",
-        "selectedIconPath": "static/images/home.png"
+        "pagePath": "pages/write/write",
+        "text": "发布话题",
+        "iconPath": "static/images/write_light.png",
+        "selectedIconPath": "static/images/write.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "static/images/message_light.png",
+        "selectedIconPath": "static/images/message.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我",
+        "iconPath": "static/images/my_light.png",
+        "selectedIconPath": "static/images/my.png"
       }
     ]
   },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "cndoe",
+    "navigationBarTitleText": "CNode",
     "navigationBarTextStyle": "black"
   },
   "networkTimeout": {

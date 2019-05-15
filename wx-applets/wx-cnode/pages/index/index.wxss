@@ -12,7 +12,7 @@
   color:#fff;
   display: flex;
   justify-content: space-around;
-  background-color: #1caaff;
+  background-color: #2279fe;
 }
 .card-item{
   background: #fff;
@@ -27,6 +27,8 @@
   width: 60rpx;
   height: 60rpx;
   border-radius: 50%;
+  border: 5rpx solid #2279fe;
+  box-sizing: content-box;
 }
 
 .topic-type{
@@ -39,7 +41,7 @@
 }
 .topic-type.top{
   color: #fff;
-  background-color: #1caaff;
+  background-color: #2279fe;
 }
 .card-item .topic-title{
 

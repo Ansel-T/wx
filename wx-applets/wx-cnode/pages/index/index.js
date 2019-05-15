@@ -26,7 +26,6 @@ Page({
   formatListData:function(list) {
     return list.map((item) => {
       item.lastAt = lastAt(item.last_reply_at);
-      console.log(item.lastAt);
       return item;
     })
   }

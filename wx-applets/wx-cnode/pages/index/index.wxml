@@ -8,7 +8,7 @@
   </view>
   <view wx:if="{{topicList}}">
     <view wx:for="{{topicList}}"  wx:key="{{i}}" class="card-item mb20">
-        <navigator url="/pages/logs/logs" open-type="navigate" hover-class="none">
+        <navigator url="/pages/topicDetial/detial" open-type="navigate" hover-class="none">
             <view class="user-info">
                 <view class='fix'>
                   <image src="{{item.author.avatar_url}}" class="user-img left"></image>

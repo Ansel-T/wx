@@ -29,6 +29,7 @@
 .reds,.reds a{color:#F00;}
 .blue,.blue a{color:#0177A7;}
 .black,.black a{color:#000;}
+.main-color{color: #2279fe}
 .f0{font-size: 0}
 .f20{font-size:20rpx;}
 .f22{font-size:22rpx;}

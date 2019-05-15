@@ -1,0 +1,4 @@
+<!--pages/topicDetial/detial.wxml-->
+<view class="container ">
+  <text class="main-color ac">我是内容详情页面哦</text>
+</view>
