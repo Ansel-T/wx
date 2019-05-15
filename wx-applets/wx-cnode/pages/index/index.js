@@ -1,4 +1,5 @@
-//index.js
+import { lastAt } from '../../utils/util.js';
+
 //获取应用实例
 const app = getApp()
 
@@ -9,18 +10,24 @@ Page({
   onLoad: function () {
     let parmas = {
       page:1,
-      tab: 'ask',
       limit:10,
     }
-    console.log(this);
+    
     app.api.topics(parmas).then(res => {
-      console.log(res.data.data);
+      let data = this.formatListData(res.data.data);
       this.setData({
         topicList: res.data.data,
       })
     })
     .catch(e => {
       console.error(e)
+    })
+  },
+  formatListData:function(list) {
+    return list.map((item) => {
+      item.lastAt = lastAt(item.last_reply_at);
+      console.log(item.lastAt);
+      return item;
     })
   }
   

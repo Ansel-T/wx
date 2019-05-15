@@ -1,6 +1,7 @@
 /**index.wxss**/
  page{
-   background: #f5f5f5;
+  background: #f5f5f5;
+  letter-spacing: 1rpx;
  }
 
 .header-nav{
@@ -20,11 +21,25 @@
 }
 .card-item .user-info{
   display: flex;
+  justify-content: space-between;
 }
 .card-item .user-info .user-img{
   width: 60rpx;
   height: 60rpx;
   border-radius: 50%;
+}
+
+.topic-type{
+  margin-top: 10rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  padding: 0 20rpx;
+  background: #e0e0e0;
+  border-radius: 10rpx;
+}
+.topic-type.top{
+  color: #fff;
+  background-color: #1caaff;
 }
 .card-item .topic-title{
 

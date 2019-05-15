@@ -153,25 +153,25 @@ strong{font-weight:bold;}
 .FST{font-family:"宋体";}
 .FHT{font-family:"黑体";}
 /*行高*/
-.kgc_lh20{
+.lh20{
     line-height: 20rpx;
 }
-.kgc_lh24{
+.lh24{
     line-height: 24rpx;
 }
-.kgc_lh26{
+.lh26{
     line-height: 26rpx;
 }
-.kgc_lh30{
+.lh30{
     line-height: 30rpx;
 }
-.kgc_lh36{
+.lh36{
     line-height: 36rpx;
 }
-.kgc_lh50{
+.lh50{
     line-height: 50rpx;
 }
-.kgc_lh60{
+.lh60{
     line-height: 60rpx;
 }
 /*省略号*/
