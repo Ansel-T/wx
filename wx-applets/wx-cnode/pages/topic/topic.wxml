@@ -7,7 +7,7 @@
         <view class="f22 color-999">发表于 {{issuingTime}}</view>
       </view>
   </view>
-  <view class='f40 topic-t strong pt30 pb30'>
+  <view class='f38 lh60 topic-t strong pt30 pb30'>
     {{content.title}}
   </view>
   <view class='content lh50 f30 '>

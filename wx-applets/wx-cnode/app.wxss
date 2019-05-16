@@ -44,6 +44,7 @@
 .f30{font-size:30rpx;}
 .f32{font-size:32rpx;}
 .f36{font-size:36rpx;}
+.f38{font-size:38rpx;}
 .f40{font-size:40rpx;}
 .f48{font-size:48rpx;}
 .f56{font-size:56rpx;}

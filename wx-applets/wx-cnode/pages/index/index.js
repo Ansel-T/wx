@@ -5,25 +5,46 @@ const app = getApp()
 
 Page({
   data: {
+    page:1,
     topicList:null
   },
   onLoad: function () {
+    this.fetchTopics(true);
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    // this.fetchTopics(true);
+  },
+
+  /**
+   * 页面下拉到底部
+   */
+  onReachBottom:function(){
+    this.fetchTopics();
+  },
+
+  fetchTopics:function(init=false){
     let parmas = {
-      page:1,
-      limit:10,
+      page: this.data.page,
+      limit: 10,
     }
-    
+
     app.api.topics(parmas).then(res => {
       let data = this.formatListData(res.data.data);
-      console.log(data);
       this.setData({
-        topicList: res.data.data,
+        page:init ? 1 : this.data.page + 1,
+        topicList: init ? data : this.data.topicList.concat(data)
       })
+      console.log(this.data.topicList)
     })
-    .catch(e => {
-      console.error(e)
-    })
+      .catch(e => {
+        console.error(e)
+      })
   },
+
   formatListData:function(list) {
     return list.map((item) => {
       item.lastAt = lastAt(item.last_reply_at);
