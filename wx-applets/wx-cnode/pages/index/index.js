@@ -35,7 +35,7 @@ Page({
     app.api.topics(parmas).then(res => {
       let data = this.formatListData(res.data.data);
       this.setData({
-        page:init ? 1 : this.data.page + 1,
+        page:init ? 2 : this.data.page + 1,
         topicList: init ? data : this.data.topicList.concat(data)
       })
       console.log(this.data.topicList)
