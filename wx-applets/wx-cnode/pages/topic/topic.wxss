@@ -1,0 +1,23 @@
+/* pages/topic/topic.wxss */
+
+@import '../wxParse/wxParse.wxss';
+
+.container{
+  padding: 25rpx;
+}
+
+.user-info{
+  display: flex;
+  /* justify-content: space-between; */
+}
+.user-info .user-img{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  border: 5rpx solid #2279fe;
+  box-sizing: content-box;
+}
+
+.topic-t{
+  border-bottom:2rpx dashed #ccc;
+}

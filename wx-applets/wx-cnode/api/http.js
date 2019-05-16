@@ -33,7 +33,7 @@ const checkCode = (resolve, res) => {
  * @return {Promise}
  */
 const apiUrl = "https://cnodejs.org/api/v1/";
-const http = (path, params) => {
+const http = (path, params={}) => {
   return new Promise((resolve, reject) => {
     wx.request({
       url: `${apiUrl}${path}`,

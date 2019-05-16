@@ -1,18 +1,33 @@
-// pages/topicDetial/detial.js
+// pages/topic/topic.js
+
+const app = getApp();
+const WxParse = require('../wxParse/wxParse.js');
+import { lastAt } from '../../utils/util.js';
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    content:null,
+    issuingTime:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    app.api.topicDetail({ id: options.id, mdrender:true}).then( res => {
+      let info = res.data.data;
+      console.log(info);
+      this.setData({
+        content: info,
+        issuingTime: lastAt(info.create_at)
+        })
+      let content = info.content;
+      WxParse.wxParse('article', 'html', content, this, 5);
+    })
   },
 
   /**

@@ -4,7 +4,7 @@
     "pages/message/message",
     "pages/my/my",
     "pages/write/write",
-    "pages/topicDetial/detial",
+    "pages/topic/topic",
     "pages/logs/logs"
   ],
   "tabBar": {

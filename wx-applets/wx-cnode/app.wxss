@@ -1,11 +1,12 @@
 /**app.wxss**/
 
+
 @import '/static/fonts/iconfont.wxss';
 
-.icon-tt::after{
-  content: '123',
-  
-}
+
+ page{
+  letter-spacing: 1rpx;
+ }
 
 .center{margin:0 auto;}
 .left{float:left;}
@@ -25,6 +26,10 @@
 .normal{font-weight:normal;}
 .no-bg{background:none !important;}
 
+.color-333{color:#333}
+.color-666{color:#666}
+.color-999{color:#999}
+.color-ccc{color:#ccc}
 .white .white a{color:#FFF;}
 .reds,.reds a{color:#F00;}
 .blue,.blue a{color:#0177A7;}
@@ -184,3 +189,8 @@ sub{vertical-align:text-bottom;}
 .v-t{vertical-align:top;}
 .v-b{vertical-align:bottom;}
 .v-bb{vertical-align:sub;}
+
+/* wxParse css*/
+.wxParse-div .wxParse-p{
+  margin: 20rpx 0 ;
+}

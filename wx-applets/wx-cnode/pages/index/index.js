@@ -15,6 +15,7 @@ Page({
     
     app.api.topics(parmas).then(res => {
       let data = this.formatListData(res.data.data);
+      console.log(data);
       this.setData({
         topicList: res.data.data,
       })

@@ -1,8 +1,8 @@
 /**index.wxss**/
- page{
+
+page{
   background: #f5f5f5;
-  letter-spacing: 1rpx;
- }
+}
 
 .header-nav{
   width: 100%;
