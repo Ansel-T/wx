@@ -18,7 +18,7 @@
                  <view  wx:if= "{{item.top}}" class='topic-type top f24'>置顶</view>
                  <view  wx:elif= "{{item.tab === 'ask'}}" class='topic-type f24'>问答</view>
                  <view  wx:elif= "{{item.tab === 'share'}}" class='topic-type f24'>分享</view>
-                 <view  wx:elif= "{{item.tab === 'joob'}}" class='topic-type f24'>招聘</view>
+                 <view  wx:elif= "{{item.tab === 'job'}}" class='topic-type f24'>招聘</view>
                  <view  wx:else class='topic-type  f24'>精华</view>
                 
             </view>
