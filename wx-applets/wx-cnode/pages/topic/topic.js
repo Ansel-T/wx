@@ -18,7 +18,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    app.api.topicDetail({ id: options.id, mdrender:true}).then( res => {
+    app.api.topicDetail({ id: options.id, mdrender:true})
+    .then( res => {
       let info = res.data.data;
       console.log(info);
       this.setData({
@@ -27,6 +28,9 @@ Page({
         })
       let content = info.content;
       WxParse.wxParse('article', 'html', content, this, 5);
+    })
+    .catch(e => {
+      console.error(e)
     })
   },
 

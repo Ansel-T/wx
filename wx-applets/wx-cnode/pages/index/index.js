@@ -43,7 +43,8 @@ Page({
       limit: 10,
     }
 
-    app.api.topics(parmas).then(res => {
+    app.api.topics(parmas)
+    .then(res => {
       let data = this.formatListData(res.data.data);
       this.setData({
         page:init ? 2 : this.data.page + 1,
@@ -51,9 +52,9 @@ Page({
       })
       console.log(this.data.topicList)
     })
-      .catch(e => {
-        console.error(e)
-      })
+    .catch(e => {
+      console.error(e)
+    })
   },
 
   formatListData:function(list) {
