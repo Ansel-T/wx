@@ -34,6 +34,10 @@ const checkCode = (resolve, res) => {
  */
 const apiUrl = "https://cnodejs.org/api/v1/";
 const http = (path, params={}) => {
+  wx.showLoading({
+    title: '加载中',
+    mask: true
+  })
   return new Promise((resolve, reject) => {
     wx.request({
       url: `${apiUrl}${path}`,

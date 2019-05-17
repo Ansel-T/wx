@@ -7,7 +7,7 @@
     <view bindtap="changeTab" data-tab="ask">问答</view>
     <view bindtap="changeTab" data-tab="job">招聘</view>
   </view>
-  <view wx:if="{{topicList}}">
+  <view class="topic-list-box" wx:if="{{topicList}}">
     <view wx:for="{{topicList}}"  wx:key="{{i}}" class="card-item mb20">
         <navigator url="/pages/topic/topic?id={{item.id}}" open-type="navigate" hover-class="none">
             <view class="user-info">

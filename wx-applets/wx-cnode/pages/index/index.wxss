@@ -13,6 +13,12 @@ page{
   display: flex;
   justify-content: space-around;
   background-color: #2279fe;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.topic-list-box{
+  padding-top: 70rpx;
 }
 .card-item{
   background: #fff;
