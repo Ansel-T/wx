@@ -16,10 +16,11 @@
                   <view class="user-name f30 ml20 mt15 right">{{item.author.loginname}}</view>
                 </view>
                  <view  wx:if= "{{item.top}}" class='topic-type top f24'>置顶</view>
+                 <view  wx:elif= "{{item.good}}" class='topic-type top f24'>精华</view>
                  <view  wx:elif= "{{item.tab === 'ask'}}" class='topic-type f24'>问答</view>
                  <view  wx:elif= "{{item.tab === 'share'}}" class='topic-type f24'>分享</view>
                  <view  wx:elif= "{{item.tab === 'job'}}" class='topic-type f24'>招聘</view>
-                 <view  wx:else class='topic-type  f24'>精华</view>
+                 
                 
             </view>
             <view class="mt20 mb20 f28 lh50 topic-title">{{item.title}}</view>
