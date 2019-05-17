@@ -195,3 +195,6 @@ sub{vertical-align:text-bottom;}
 .wxParse-div .wxParse-p{
   margin: 20rpx 0 ;
 }
+.wxParse-div .wxParse-pre{
+  background-color: #f5f5f5;
+}
