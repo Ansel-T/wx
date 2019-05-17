@@ -1,10 +1,11 @@
 <!--index.wxml-->
 <view class="container">
   <view class='header-nav'>
-    <view>全部</view>
-    <view>精华</view>
-    <view>分享</view>
-    <view>招聘</view>
+    <view bindtap='changeTab' data-tab="">全部</view>
+    <view bindtap="changeTab" data-tab="good">精华</view>
+    <view bindtap="changeTab" data-tab="share">分享</view>
+    <view bindtap="changeTab" data-tab="ask">问答</view>
+    <view bindtap="changeTab" data-tab="job">招聘</view>
   </view>
   <view wx:if="{{topicList}}">
     <view wx:for="{{topicList}}"  wx:key="{{i}}" class="card-item mb20">

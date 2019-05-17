@@ -5,10 +5,20 @@ const app = getApp()
 
 Page({
   data: {
+    tab:'',
     page:1,
     topicList:null
   },
   onLoad: function () {
+    this.fetchTopics(true);
+  },
+
+  changeTab:function(e){
+    let tab = e.currentTarget.dataset.tab;
+    this.setData({
+      tab:tab,
+      page:1
+    })
     this.fetchTopics(true);
   },
 
@@ -28,6 +38,7 @@ Page({
 
   fetchTopics:function(init=false){
     let parmas = {
+      tab:this.data.tab,
       page: this.data.page,
       limit: 10,
     }
