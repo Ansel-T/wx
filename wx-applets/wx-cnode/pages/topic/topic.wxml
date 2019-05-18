@@ -1,17 +1,35 @@
 <!--pages/topic/topic.wxml-->
 <view class="container">
-  <view class="user-info">
-      <image src="{{content.author.avatar_url}}" class="user-img left"></image>
-      <view class="user-name f24 ml20  right">
-        <view class="f30">{{content.author.loginname}}</view>
-        <view class="f22 color-999">发表于 {{issuingTime}}</view>
+  <view class='p25'>
+    <view class="user-info ">
+        <image src="{{content.author.avatar_url}}" class="user-img left"></image>
+        <view class="user-name f24 ml20  right">
+          <view class="f30">{{content.author.loginname}}</view>
+          <view class="f22 color-999">发表于 {{issuingTime}}</view>
+        </view>
+    </view>
+    <view class='f38 lh60 topic-t strong pt30 pb30 '>
+      {{content.title}}
+    </view>
+    <view class='content lh50 f30 pb30 '>
+      <import src="../wxParse/wxParse.wxml"/>
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+  </view>
+
+  <view class='p15 bg-f5'></view>
+  <view class="replies-box p25">
+    <view wx:for="{{content.replies}}" wx:key="*this" class="reply-item">
+      <view class="user-info">
+          <image src="{{item.author.avatar_url}}" class="user-img left"></image>
+          <view class="user-name f24 ml20  right">
+            <view class="f30">{{item.author.loginname}}</view>
+            <view class="f22 color-999">发表于 {{issuingTime}}</view>
+          </view>
       </view>
-  </view>
-  <view class='f38 lh60 topic-t strong pt30 pb30'>
-    {{content.title}}
-  </view>
-  <view class='content lh50 f30 '>
-    <import src="../wxParse/wxParse.wxml"/>
-    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+      <view class='reply-c f30 lh50'>
+        <rich-text nodes="{{item.content}}"></rich-text>
+      </view>
+    </view>
   </view>
 </view>

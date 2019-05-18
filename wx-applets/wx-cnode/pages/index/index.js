@@ -40,7 +40,7 @@ Page({
     let parmas = {
       tab:this.data.tab,
       page: this.data.page,
-      limit: 10,
+      limit: 20,
     }
 
     app.api.topics(parmas)

@@ -3,7 +3,7 @@
 @import '../wxParse/wxParse.wxss';
 
 .container{
-  padding: 25rpx;
+  /* padding: 25rpx; */
 }
 
 .user-info{
@@ -20,4 +20,12 @@
 
 .topic-t{
   border-bottom:2rpx dashed #ccc;
+}
+
+.reply-item{
+  padding: 20rpx 0;
+  border-bottom: 2rpx dashed #ccc;
+}
+.reply-c{
+  padding: 10rpx 0 10rpx 80rpx;
 }
