@@ -22,6 +22,7 @@ Page({
     .then( res => {
       let info = res.data.data;
       console.log(info);
+      info.replies = this.formatListData(info.replies);
       this.setData({
         content: info,
         issuingTime: lastAt(info.create_at)
@@ -31,6 +32,13 @@ Page({
     })
     .catch(e => {
       console.error(e)
+    })
+  },
+
+  formatListData: function (list) {
+    return list.map((item) => {
+      item.createAt = lastAt(item.create_at);
+      return item;
     })
   },
 

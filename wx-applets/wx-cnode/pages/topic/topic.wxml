@@ -17,15 +17,21 @@
     </view>
   </view>
 
-  <view class='p15 bg-f5'></view>
+  <view wx:if="{{content}}" class='p15 bg-f5'></view>
+
   <view class="replies-box p25">
     <view wx:for="{{content.replies}}" wx:key="*this" class="reply-item">
-      <view class="user-info">
-          <image src="{{item.author.avatar_url}}" class="user-img left"></image>
-          <view class="user-name f24 ml20  right">
-            <view class="f30">{{item.author.loginname}}</view>
-            <view class="f22 color-999">发表于 {{issuingTime}}</view>
-          </view>
+      <view class='fix'>
+        <view class="user-info left">
+            <image src="{{item.author.avatar_url}}" class="user-img left"></image>
+            <view class="user-name f24 ml20  right">
+              <view class="f30">{{item.author.loginname}}</view>
+              <view class="f22 color-999">发表于 {{item.createAt}}</view>
+            </view>
+        </view>
+        <view wx:if="{{item.ups.length}}" class='right f30 color-999'>
+          {{item.ups.length}} 赞
+        </view>
       </view>
       <view class='reply-c f30 lh50'>
         <rich-text nodes="{{item.content}}"></rich-text>
