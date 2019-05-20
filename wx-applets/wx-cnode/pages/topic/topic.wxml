@@ -20,7 +20,7 @@
   <view wx:if="{{content}}" class='p15 bg-f5'></view>
 
   <view class="replies-box p25">
-    <view wx:for="{{content.replies}}" wx:key="*this" class="reply-item">
+    <view wx:if="content.replies.length" wx:for="{{content.replies}}" wx:key="*this" class="reply-item">
       <view class='fix'>
         <view class="user-info left">
             <image src="{{item.author.avatar_url}}" class="user-img left"></image>
@@ -40,5 +40,10 @@
         <rich-text nodes="{{item.content}}"></rich-text>
       </view>
     </view>
+
+    <view wx:if="{{!content.replies.length}}" class='aC p50 f30 color-999'>
+      暂无评论
+    </view>
+
   </view>
 </view>
