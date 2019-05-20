@@ -29,3 +29,12 @@
 .reply-c{
   padding: 10rpx 0 10rpx 80rpx;
 }
+
+.item-right-box{
+  display: flex;
+  align-items: center;
+}
+.icon-appreciate{
+  width: 35rpx;
+  height:35rpx;
+}

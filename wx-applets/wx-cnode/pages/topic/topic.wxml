@@ -29,8 +29,11 @@
               <view class="f22 color-999">发表于 {{item.createAt}}</view>
             </view>
         </view>
-        <view wx:if="{{item.ups.length}}" class='right f30 color-999'>
-          {{item.ups.length}} 赞
+        <view  class='right item-right-box f30 color-999'>
+          <image wx:if="{{!item.is_uped}}" class='icon-appreciate  mr5' src='../../static/images/appreciate_light.png'></image>
+          <image wx:else class='icon-appreciate mr5' src='../../static/images/appreciate.png'></image>
+          <text wx:if="{{item.ups.length}}" class="f26 mt5 {{item.is_uped ? 'main-color' : ''}}">{{item.ups.length}}</text>
+          <text class='ml20 iconfont icon-xiaoxi strang f36' bindtap="popReplyBox"></text>
         </view>
       </view>
       <view class='reply-c f30 lh50'>

@@ -26,7 +26,7 @@
             <view class="mt20 mb20 f28 lh50 topic-title">{{item.title}}</view>
             <view class='card-item-b f24 fix'>
               <view class='left v-t'>
-                <text class='mr20'> <text class='iconfont icon-liulan v-bb f40'></text> {{item.visit_count}}</text>
+                <text class='mr20'> <text class='iconfont icon-liulan v-s f40'></text> {{item.visit_count}}</text>
                 <text> <text class='iconfont icon-xiaoxi v-m f38'></text> {{item.reply_count}}</text>
               </view>
               <view class='right'>
