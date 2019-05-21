@@ -1,18 +1,45 @@
 // pages/my/my.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    renderShow:false,
+    loginInfo:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let info = wx.getStorageSync('loginInfo') ? wx.getStorageSync('loginInfo') : null;
+    this.setData({
+      loginInfo: info,
+      renderShow:true
+    })
+    
+  },
 
+  login:function(){
+    wx.scanCode({
+      success: (res) => {
+        wx.setStorageSync("loginInfo", res);
+        this.setData({
+          loginInfo: res
+        })
+      },
+      fail:(err) => {
+        console.error(err);
+      }
+    })
+  },
+  signout:function(){
+    wx.clearStorageSync("loginInfo");
+    this.setData({
+      loginInfo: null
+    })
   },
 
   /**
