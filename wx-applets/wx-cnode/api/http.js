@@ -45,7 +45,7 @@ const http = (path, params={}) => {
     wx.request({
       url: `${apiUrl}${path}`,
       data: Object.assign({}, params),
-      header: { 'Content-Type': 'json' },
+      header: { 'Content-Type': 'application/json' },
       method: method || 'get',
       success: function (res) {
         checkCode(resolve, res)
