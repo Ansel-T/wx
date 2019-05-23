@@ -5,7 +5,7 @@
 
 
  page{
-  letter-spacing: 1rpx;
+  letter-spacing: 2rpx;
  }
 
 .center{margin:0 auto;}

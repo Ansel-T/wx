@@ -7,16 +7,21 @@ Page({
    */
   data: {
     renderShow:false,
-    loginInfo:null
+    accesstoken:null,
+    myInfo:null,
+    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let info = wx.getStorageSync('loginInfo') ? wx.getStorageSync('loginInfo') : null;
+    console.log(wx.getStorageSync('accesstoken'))
+    console.log(Boolean(wx.getStorageSync('accesstoken')));
+    let info = (wx.getStorageSync('accesstoken') !== '' || wx.getStorageSync('accesstoken')) ? wx.getStorageSync('accesstoken') : null;
+    console.log(info);
     this.setData({
-      loginInfo: info,
+      accesstoken: info,
       renderShow:true
     })
     
@@ -25,10 +30,12 @@ Page({
   login:function(){
     wx.scanCode({
       success: (res) => {
-        wx.setStorageSync("loginInfo", res);
+        wx.setStorageSync("accesstoken", res);
+        console.log(res)
         this.setData({
-          loginInfo: res
+          accesstoken: res.result
         })
+        this.checkToken(res.result);
       },
       fail:(err) => {
         console.error(err);
@@ -36,9 +43,29 @@ Page({
     })
   },
   signout:function(){
-    wx.clearStorageSync("loginInfo");
+    wx.clearStorageSync("accesstoken");
     this.setData({
-      loginInfo: null
+      accesstoken: null
+    })
+  },
+
+  checkToken:function(token){
+    app.api.checkToken(token)
+    .then(res => {
+
+    })
+    .catch(err => {
+
+    })
+  },
+
+  fetchMyInfo:function(){
+    app.api.fetchMyInfo(this.accesstoken.name)
+    .then( res => {
+      console.error(err);
+    })
+    .catch( err => {
+      console.error(err);
     })
   },
 

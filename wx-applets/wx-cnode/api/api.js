@@ -8,10 +8,19 @@ function topicDetail(params) {
   return http(`topic/${params.id}`,{ mdrender:true}).then(res => res).catch(err => err)
 }
 
+function checkToken(token){
+  return http(`accesstoken`, { accesstoken:token, method: 'post' }).then(res => res).catch(err => err)
+}
+
+function fetchUserInfo(name) {
+  return http(`user/${name}`).then(res => res).catch(err => err)
+}
 
 module.exports = {
   topics,
-  topicDetail
+  topicDetail,
+  checkToken,
+  fetchUserInfo
 
 }
   

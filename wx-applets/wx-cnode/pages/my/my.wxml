@@ -1,12 +1,39 @@
 <!--pages/my/my.wxml-->
-<view wx:if="{{renderShow}}" class="container h pl50 pr50">
-  <view class='w' wx:if="{{!loginInfo}}">
+<view wx:if="{{renderShow}}" class="container h ">
+  <view class=' h login-box pl50 pr50' wx:if="{{!loginInfo}}">
     <button class='w' hover-class="button-hover" bindtap="login">扫码登录</button>
   
     <text class='color-999 f24 mt20'>如何获取 accessToken？ 用户登录后，在网页版CNode设置页面可以看到自己的 accessToken。</text>
   </view>
   <view class='w' wx:else>
-    <text class="f30 aC">登录成功</text>
-    <button class='w' hover-class="button-hover" bindtap="signout">退出</button>
+    <view class='p10 bg-f5'></view>
+    <view class="my-info pl50 pr50">
+      <image class='user-img' src='https://avatars1.githubusercontent.com/u/1147375?v=4&s=120'></image>
+      <view class='ml50'>
+        <view class="f40">古二</view>
+        <view class='f30 mt10 color-999'>积分:1520</view>
+      </view>
+    </view>
+    <view class='p10 bg-f5'></view>
+    <view class='my-list color-333'>
+      <view class='my-list-i f36 pl50 pr50'>
+        <view class='icon mr50'></view>
+        <navigator url="/pages/topic/topic" open-type="navigate" hover-class="none">收藏集</navigator>
+      </view>
+
+      <view class='my-list-i f36 pl50 pr50'>
+        <view class='icon mr50'></view>
+        <navigator url="/pages/topic/topic" open-type="navigate" hover-class="none">我最近创建的</navigator>
+      </view>
+
+      <view class='my-list-i f36 pl50 pr50'>
+        <view class='icon mr50'></view>
+        <navigator url="/pages/topic/topic" open-type="navigate" hover-class="none">我最近参与的</navigator>
+      </view>
+    </view>
+    <view class='p10 bg-f5'></view>
+    <view class='pl50 pr50 pt50'>
+      <button class='w' hover-class="button-hover" bindtap="signout">退出</button>
+    </view>
   </view>
 </view>

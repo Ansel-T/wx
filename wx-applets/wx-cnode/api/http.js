@@ -38,12 +38,15 @@ const http = (path, params={}) => {
     title: '加载中',
     mask: true
   })
+  let method = params.method;
+  delete params.method;
   return new Promise((resolve, reject) => {
+    console.log(params)
     wx.request({
       url: `${apiUrl}${path}`,
       data: Object.assign({}, params),
       header: { 'Content-Type': 'json' },
-      method: params.method || 'get',
+      method: method || 'get',
       success: function (res) {
         checkCode(resolve, res)
         wx.hideLoading()
