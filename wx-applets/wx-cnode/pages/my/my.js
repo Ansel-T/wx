@@ -16,12 +16,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(wx.getStorageSync('accesstoken'))
-    console.log(Boolean(wx.getStorageSync('accesstoken')));
-    let info = (wx.getStorageSync('accesstoken') !== '' || wx.getStorageSync('accesstoken')) ? wx.getStorageSync('accesstoken') : null;
-    console.log(info);
+    let accesstoken = (wx.getStorageSync('accesstoken') !== '' || wx.getStorageSync('accesstoken')) ? wx.getStorageSync('accesstoken') : null;
+    let myInfo = (wx.getStorageSync('myInfo') !== '' || wx.getStorageSync('myInfo')) ? wx.getStorageSync('myInfo') : null;
+    console.log(myInfo);
     this.setData({
-      accesstoken: info,
+      accesstoken: accesstoken,
+      myInfo,
       renderShow:true
     })
     
@@ -44,25 +44,31 @@ Page({
   },
   signout:function(){
     wx.clearStorageSync("accesstoken");
+    wx.clearStorageSync("myInfo");
     this.setData({
-      accesstoken: null
+      accesstoken: null,
+      myInfo: null,
     })
   },
 
   checkToken:function(token){
     app.api.checkToken(token)
     .then(res => {
-
+      this.fetchMyInfo(res.data.loginname)
     })
     .catch(err => {
 
     })
   },
 
-  fetchMyInfo:function(){
-    app.api.fetchMyInfo(this.accesstoken.name)
+  fetchMyInfo:function(name){
+    app.api.fetchUserInfo(name)
     .then( res => {
-      console.error(err);
+      let myInfo = res.data.data;
+      wx.setStorageSync("myInfo", myInfo);
+      this.setData({
+        myInfo
+      })
     })
     .catch( err => {
       console.error(err);

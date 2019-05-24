@@ -1,6 +1,6 @@
 <!--pages/my/my.wxml-->
 <view wx:if="{{renderShow}}" class="container h ">
-  <view class=' h login-box pl50 pr50' wx:if="{{!loginInfo}}">
+  <view class=' h login-box pl50 pr50' wx:if="{{!myInfo}}">
     <button class='w' hover-class="button-hover" bindtap="login">扫码登录</button>
   
     <text class='color-999 f24 mt20'>如何获取 accessToken？ 用户登录后，在网页版CNode设置页面可以看到自己的 accessToken。</text>
@@ -8,10 +8,10 @@
   <view class='w' wx:else>
     <view class='p10 bg-f5'></view>
     <view class="my-info pl50 pr50">
-      <image class='user-img' src='https://avatars1.githubusercontent.com/u/1147375?v=4&s=120'></image>
+      <image class='user-img' src='{{myInfo.avatar_url}}'></image>
       <view class='ml50'>
-        <view class="f40">古二</view>
-        <view class='f30 mt10 color-999'>积分:1520</view>
+        <view class="f40">{{myInfo.loginname}}</view>
+        <view class='f30 mt10 color-999'>积分:{{myInfo.score}}</view>
       </view>
     </view>
     <view class='p10 bg-f5'></view>
