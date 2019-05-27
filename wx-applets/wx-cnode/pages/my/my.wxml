@@ -16,20 +16,45 @@
     </view>
     <view class='p10 bg-f5'></view>
     <view class='my-list color-333'>
-      <view class='my-list-i f36 pl50 pr50'>
-        <view class='icon mr50'></view>
-        <navigator url="/pages/topic/topic" open-type="navigate" hover-class="none">收藏集</navigator>
-      </view>
-
-      <view class='my-list-i f36 pl50 pr50'>
-        <view class='icon mr50'></view>
-        <navigator url="/pages/topic/topic" open-type="navigate" hover-class="none">我最近创建的</navigator>
-      </view>
-
-      <view class='my-list-i f36 pl50 pr50'>
-        <view class='icon mr50'></view>
-        <navigator url="/pages/topic/topic" open-type="navigate" hover-class="none">我最近参与的</navigator>
-      </view>
+      <navigator url="/pages/topic/topic" open-type="navigate" hover-class="none">
+        <view class='my-list-i f34 pl50 pr50'>
+          <view class='item-left'>
+            <view class='icon mr50'>
+              <image class='user-img w h' src='/static/images/collect.png'></image>
+            </view>
+            <view>我收藏的</view>
+          </view>
+          <view class='item-num f32 color-999'>
+            1 篇
+          </view>
+        </view>
+      </navigator>
+      <navigator url="/pages/topic/topic" open-type="navigate" hover-class="none">
+        <view class='my-list-i f34 pl50 pr50'>
+          <view class='item-left'>
+            <view class='icon mr50'>
+              <image class='user-img w h' src='/static/images/create_r.png'></image>
+            </view>
+            <view>我最近创建的</view>
+          </view>
+          <view class='item-num f32 color-999'>
+            {{myInfo.recent_topics.length}} 篇
+          </view>
+        </view>
+      </navigator>
+      <navigator url="/pages/topic/topic" open-type="navigate" hover-class="none">
+        <view class='my-list-i f34 pl50 pr50'>
+          <view class='item-left'>
+            <view class='icon mr50'>
+              <image class='user-img w h' src='/static/images/comment_r.png'></image>
+            </view>
+            <view>我最近参与的</view>
+          </view>
+          <view class='item-num f32 color-999 '>
+            {{myInfo.recent_replies.length}} 篇
+          </view>
+        </view>
+      </navigator>
     </view>
     <view class='p10 bg-f5'></view>
     <view class='pl50 pr50 pt50'>

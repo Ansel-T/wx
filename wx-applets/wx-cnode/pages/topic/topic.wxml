@@ -18,7 +18,6 @@
   </view>
 
   <view wx:if="{{content}}" class='p15 bg-f5'></view>
-
   <view class="replies-box p25">
     <view wx:if="content.replies.length" wx:for="{{content.replies}}" wx:key="*this" class="reply-item">
       <view class='fix'>
