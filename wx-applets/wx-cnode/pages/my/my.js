@@ -55,6 +55,7 @@ Page({
     app.api.checkToken(token)
     .then(res => {
       this.fetchMyInfo(res.data.loginname)
+      this.fetchCollect(res.data.loginname)
     })
     .catch(err => {
 
@@ -65,10 +66,26 @@ Page({
     app.api.fetchUserInfo(name)
     .then( res => {
       let myInfo = res.data.data;
-      wx.setStorageSync("myInfo", myInfo);
       this.setData({
         myInfo
       })
+      wx.setStorageSync("myInfo", this.data.myInfo);
+    })
+    .catch( err => {
+      console.error(err);
+    })
+  },
+
+  fetchCollect: function (name) {
+    app.api.fetchCollect(name)
+    .then( res => {
+      let myInfo = this.data.myInfo ;
+      myInfo.collect = res.data.data;
+      this.setData({
+        myInfo
+      })
+      console.log(myInfo);
+      wx.setStorageSync("myInfo", this.data.myInfo);
     })
     .catch( err => {
       console.error(err);

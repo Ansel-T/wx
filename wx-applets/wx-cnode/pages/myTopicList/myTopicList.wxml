@@ -1,0 +1,5 @@
+<!--pages/myTopicList/myTopicList.wxml-->
+
+<view class='f30'>
+  {{titleTxt}}
+</view>

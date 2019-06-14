@@ -16,7 +16,7 @@
     </view>
     <view class='p10 bg-f5'></view>
     <view class='my-list color-333'>
-      <navigator url="/pages/topic/topic" open-type="navigate" hover-class="none">
+      <navigator url="/pages/myTopicList/myTopicList?type=collect" open-type="navigate" hover-class="none">
         <view class='my-list-i f34 pl50 pr50'>
           <view class='item-left'>
             <view class='icon mr50'>
@@ -25,11 +25,11 @@
             <view>我收藏的</view>
           </view>
           <view class='item-num f32 color-999'>
-            1 篇
+            {{myInfo.collect.length}} 篇
           </view>
         </view>
       </navigator>
-      <navigator url="/pages/topic/topic" open-type="navigate" hover-class="none">
+      <navigator url="/pages/myTopicList/myTopicList?type=recent_topics" open-type="navigate" hover-class="none">
         <view class='my-list-i f34 pl50 pr50'>
           <view class='item-left'>
             <view class='icon mr50'>
@@ -42,7 +42,7 @@
           </view>
         </view>
       </navigator>
-      <navigator url="/pages/topic/topic" open-type="navigate" hover-class="none">
+      <navigator url="/pages/myTopicList/myTopicList?type=recent_replies" open-type="navigate" hover-class="none">
         <view class='my-list-i f34 pl50 pr50'>
           <view class='item-left'>
             <view class='icon mr50'>
