@@ -6,15 +6,19 @@ Page({
    */
   data: {
     type:'',
-    titleTxt:''
+    titleTxt:'',
+    topicList:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
     this.setPageTitle(options.type);
+    let myInfo = wx.getStorageSync('myInfo');
+    this.setData({
+      topicList: myInfo[options.type] ? myInfo[options.type] : [] 
+    })
     
   },
 

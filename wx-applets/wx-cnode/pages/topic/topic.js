@@ -10,6 +10,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    isLoading:true,
     content:null,
     issuingTime:''
   },
@@ -24,6 +25,7 @@ Page({
       console.log(info);
       info.replies = this.formatListData(info.replies);
       this.setData({
+        isLoading:false,
         content: info,
         issuingTime: lastAt(info.create_at)
         })

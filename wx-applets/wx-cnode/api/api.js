@@ -16,11 +16,16 @@ function fetchUserInfo(name) {
   return http(`user/${name}`).then(res => res).catch(err => err)
 }
 
+function fetchCollect(name) {
+  return http(`topic_collect/${name}`).then(res => res).catch(err => err)
+}
+
 module.exports = {
   topics,
   topicDetail,
   checkToken,
-  fetchUserInfo
+  fetchUserInfo,
+  fetchCollect
 
 }
   

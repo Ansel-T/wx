@@ -1,5 +1,5 @@
 <!--pages/topic/topic.wxml-->
-<view class="container">
+<view class="container" wx:if="{{!isLoading}}">
   <view class='p25'>
     <view class="user-info ">
         <image src="{{content.author.avatar_url}}" class="user-img left"></image>

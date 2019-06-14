@@ -1,1 +1,34 @@
 /* pages/myTopicList/myTopicList.wxss */
+.card-item{
+  background: #fff;
+  padding: 20rpx;
+  border-bottom:2rpx solid #e0e0e0;
+
+}
+.card-item:last-child{
+  border: none;
+}
+.card-item .user-info{
+  display: flex;
+  justify-content: space-between;
+}
+.card-item .user-info .user-img{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  border: 5rpx solid #2279fe;
+  box-sizing: content-box;
+}
+
+.topic-type{
+  margin-top: 10rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  padding: 0 20rpx;
+  background: #e0e0e0;
+  border-radius: 10rpx;
+}
+.topic-type.top{
+  color: #fff;
+  background-color: #2279fe;
+}

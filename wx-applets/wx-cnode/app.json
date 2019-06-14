@@ -5,7 +5,8 @@
     "pages/my/my",
     "pages/write/write",
     "pages/topic/topic",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/myTopicList/myTopicList"
   ],
   "tabBar": {
     "color": "#333",

@@ -1,5 +1,28 @@
 <!--pages/myTopicList/myTopicList.wxml-->
-
-<view class='f30'>
-  {{titleTxt}}
+<view wx:if="{{topicList}}">
+  <view class="topic-list-box" wx:if="{{topicList.length !== 0}}">
+    <view wx:for="{{topicList}}"  wx:key="{{i}}" class="card-item mb20">
+        <navigator url="/pages/topic/topic?id={{item.id}}" open-type="navigate" hover-class="none">
+            <view class="user-info">
+                <view class='fix'>
+                  <image src="{{item.author.avatar_url}}" class="user-img left"></image>
+                  <view class="user-name f30 ml20 mt15 right">{{item.author.loginname}}</view>
+                </view>
+            </view>
+            <view class="mt20 mb20 f28 lh50 topic-title">{{item.title}}</view>
+            <view class='card-item-b f24 fix'>
+              <view class='left v-t'>
+                <text class='mr20'> <text class='iconfont icon-liulan v-s f40'></text> {{item.visit_count}}</text>
+                <text> <text class='iconfont icon-xiaoxi v-m f38'></text> {{item.reply_count}}</text>
+              </view>
+              <view class='right'>
+              {{item.lastAt}}
+              </view>
+            </view>
+        </navigator>
+    </view>
+  </view>
+  <view class='p50 ac f30' wx:else>
+    暂时没有文章哦！
+  </view>
 </view>
