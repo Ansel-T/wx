@@ -5,7 +5,7 @@ function topics(params) {
 }
 
 function topicDetail(params) {
-  return http(`topic/${params.id}`,{ mdrender:true}).then(res => res).catch(err => err)
+  return http(`topic/${params.id}`,params).then(res => res).catch(err => err)
 }
 
 function checkToken(token){
@@ -20,12 +20,22 @@ function fetchCollect(name) {
   return http(`topic_collect/${name}`).then(res => res).catch(err => err)
 }
 
+function addCollect(params) {
+  return http(`topic_collect/collect`, params).then(res => res).catch(err => err)
+}
+
+function deCollect(params) {
+  return http(`topic_collect/de_collect`, params).then(res => res).catch(err => err)
+}
+
 module.exports = {
   topics,
   topicDetail,
   checkToken,
   fetchUserInfo,
-  fetchCollect
+  fetchCollect,
+  addCollect,
+  deCollect
 
 }
   

@@ -1,11 +1,26 @@
 /* pages/topic/topic.wxss */
 
 @import '../wxParse/wxParse.wxss';
-
 .container{
   /* padding: 25rpx; */
 }
 
+.top-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-header .collect view{
+  font-size: 28rpx;
+  background: #2279fe;
+  color: #fff;
+  padding:10rpx 20rpx;
+  border-radius: 5rpx;
+}
+.top-header .collect .de-collect{
+  background: #ccc;
+  color: #333;
+}
 .user-info{
   display: flex;
   /* justify-content: space-between; */
