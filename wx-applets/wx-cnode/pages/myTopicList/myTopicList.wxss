@@ -1,12 +1,16 @@
 /* pages/myTopicList/myTopicList.wxss */
 .card-item{
+  min-height: 140rpx;
   background: #fff;
-  padding: 20rpx;
+  padding: 20rpx 25rpx;
   border-bottom:2rpx solid #e0e0e0;
 
 }
 .card-item:last-child{
   border: none;
+}
+navigator{
+  min-height:140rpx;
 }
 .card-item .user-info{
   display: flex;

@@ -1,4 +1,6 @@
 // pages/myTopicList/myTopicList.js
+
+import { lastAt } from '../../utils/util.js';
 Page({
 
   /**
@@ -16,8 +18,10 @@ Page({
   onLoad: function (options) {
     this.setPageTitle(options.type);
     let myInfo = wx.getStorageSync('myInfo');
+    let topicList = myInfo[options.type] ? myInfo[options.type] : [];
+
     this.setData({
-      topicList: myInfo[options.type] ? myInfo[options.type] : [] 
+      topicList: this.formatListData(topicList)
     })
     
   },
@@ -50,6 +54,17 @@ Page({
       title: title
     })
 
+  },
+
+  /**
+   * 处理时间
+   */
+  formatListData: function (list) {
+    return list.map((item) => {
+      item.lastReplyAt = lastAt(item.last_reply_at);
+      console.log(item);
+      return item;
+    })
   },
 
   /**
