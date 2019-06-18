@@ -4,24 +4,11 @@
  * @param {*} resolve
  * @param {*} res 返回的data
  */
-const checkCode = (resolve, res) => {
+const checkCode = (resolve,res) => {
   if (+res.statusCode === 200) {
     resolve(res)
-  } else if (+res.statusCode === 400) {
-    wx.showToast({
-      title: res.msg,
-      icon: 'none',
-      duration: 2000,
-      mask: true
-    })
-  } else if (+res.statusCode === 406) {
-    wx.showToast({
-      title: res.msg,
-      icon: 'none',
-      duration: 2000,
-      mask: true
-    })
   } else {
+    console.error(res);
   }
 }
 
@@ -33,11 +20,13 @@ const checkCode = (resolve, res) => {
  * @return {Promise}
  */
 const apiUrl = "https://cnodejs.org/api/v1/";
-const http = (path, params={}) => {
-  wx.showLoading({
-    title: '加载中',
-    mask: true
-  })
+const http = (path, params={},isShowLoading=true) => {
+  if (isShowLoading){
+    wx.showLoading({
+      title: '加载中',
+      mask: true
+    })
+  }
   let method = params.method;
   delete params.method;
   return new Promise((resolve, reject) => {
@@ -48,7 +37,7 @@ const http = (path, params={}) => {
       header: { 'Content-Type': 'application/json' },
       method: method || 'get',
       success: function (res) {
-        checkCode(resolve, res)
+        checkCode(resolve,res)
         wx.hideLoading()
       },
       fail: function (err) {

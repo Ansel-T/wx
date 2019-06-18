@@ -50,7 +50,6 @@ Page({
         page:init ? 2 : this.data.page + 1,
         topicList: init ? data : this.data.topicList.concat(data)
       })
-      console.log(this.data.topicList)
     })
     .catch(e => {
       console.error(e)

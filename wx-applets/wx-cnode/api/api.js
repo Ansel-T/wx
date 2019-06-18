@@ -28,6 +28,34 @@ function deCollect(params) {
   return http(`topic_collect/de_collect`, params).then(res => res).catch(err => err)
 }
 
+/**
+ * 消息相关
+ */
+function fetchMessageCount(params){
+  return http(`message/count`, params,false).then(res => res).catch(err => err)
+}
+
+/**
+ * 获取已读和未读消息
+ */
+function fetchMessage(params){
+  return http(`message`,params).then(res => res).catch(err => err)
+}
+
+/**
+ * 标记全部已读
+ */
+function setMessageMarkAll(params) {
+  return http(`/message/mark_all`, params).then(res => res).catch(err => err)
+}
+
+/**
+ * 标记单个消息为已读
+ */
+function setMessageMarkOne(params) {
+  return http(`/message/mark_one/${params.msgId}`, params).then(res => res).catch(err => err)
+}
+
 module.exports = {
   topics,
   topicDetail,
@@ -35,7 +63,12 @@ module.exports = {
   fetchUserInfo,
   fetchCollect,
   addCollect,
-  deCollect
+  deCollect,
+  fetchMessageCount,
+  fetchMessage,
+  setMessageMarkAll,
+  setMessageMarkOne
+
 
 }
   
