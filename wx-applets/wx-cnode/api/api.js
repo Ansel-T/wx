@@ -39,7 +39,7 @@ function fetchMessageCount(params){
  * 获取已读和未读消息
  */
 function fetchMessage(params){
-  return http(`message`,params).then(res => res).catch(err => err)
+  return http(`messages`,params).then(res => res).catch(err => err)
 }
 
 /**

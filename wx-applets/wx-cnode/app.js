@@ -4,14 +4,15 @@ const api = require('./api/api.js')
 App({
   api: api,
   accesstoken:'',
-  onLaunch: function () {
-    this.setMessageCount()
-  },
   globalData: {
-    userInfo: null
+    userInfo: null,
+  },
+  onLaunch: function () {
+    this.setMessageCount();
   },
   setMessageCount:function(){
     let accesstoken = wx.getStorageSync('accesstoken').result;
+    this.accesstoken = accesstoken;
     api.fetchMessageCount({accesstoken})
     .then(res => {
       if(res.data.success && res.data.data>0){

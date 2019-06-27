@@ -1,4 +1,23 @@
 <!--message.wxml-->
-<view class="container ">
-  <text class="main-color ac">消息页面</text>
+<view wx:if="{{has_read_messages && hasnot_read_messages}}" class="container ">
+  <view class='no-msg'>
+    <view class='msg-item'>
+      <view class='user-img'>
+        <image src="{{item.author.avatar_url}}" class="user-img left"></image>
+      </view>
+      <view>
+        <view class='msg-title'>
+          {{}}你发表的文章
+           <navigator url="/pages/topic/topic?id={{item.id}}" open-type="navigate" hover-class="none"></navigator>z
+        </view>
+        <text>7天前</text>
+      </view>
+    </view>
+  </view>
+  <view class='has-msg'>
+
+  </view>
+  <view wx:if="{{has_read_messages.length > 0}} && {{hasnot_read_messages.length > 0}}" class='aC p100 f30 color-333'>
+    暂无消息!!!
+  </view>
 </view>

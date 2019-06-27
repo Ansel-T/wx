@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
@@ -53,6 +53,12 @@
 					"name": "topic",
 					"pathName": "pages/topic/topic",
 					"query": "id=5bd4772a14e994202cd5bdb7",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "msg",
+					"pathName": "pages/message/message",
 					"scene": null
 				}
 			]

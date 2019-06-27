@@ -1,1 +1,15 @@
 /* pages/message/message.wxss */
+.msg-nav{
+  color:#fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sub-tabs view{
+  font-size: 28rpx;
+}
+
+.msg-item{
+  display: flex;
+  justify-content: space-between;
+}

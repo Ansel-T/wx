@@ -42,10 +42,10 @@
   },
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "CNode",
-    "navigationBarTextStyle": "black",
-    "onReachBottomDistance": 200
+    "onReachBottomDistance": 200,
+    "navigationBarBackgroundColor": "#2279fe",
+    "navigationBarTextStyle": "white"
   },
   "networkTimeout": {
     "request": 10000,

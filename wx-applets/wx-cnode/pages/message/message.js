@@ -1,25 +1,42 @@
 // pages/message/message.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    has_read_messages:null,
+    hasnot_read_messages:null,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.feachMessage();
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    
+  
+  },
 
+  feachMessage:function(){
+    app.api.fetchMessage({ accesstoken:app.accesstoken})
+      .then(res => {
+        let data = res.data.data;
+        this.setData({
+          has_read_messages: data.has_read_messages,
+          hasnot_read_messages: data.hasnot_read_messages
+        })
+      })
+      .catch(err => {
+        console.error(err);
+      })
   },
 
   /**
