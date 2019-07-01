@@ -1,5 +1,5 @@
 ### 常用正则总结
-+ g
+#### g
 就是匹配所有的
 ```javascript
 var str = 'abcda'
@@ -8,7 +8,7 @@ console.log(str.replace(reg,'A')) //Abcda
 var reg2 = /a/g
 console.log(str.replace(reg2,'A')) //AbcdA
 ```
-+ i
+#### i
 不区分大小写
 ```javascript
 var str = 'aBc'
@@ -17,19 +17,19 @@ console.log(str.match(reg)) //null
 var reg2 = /b/i
 console.log(str.match(reg2).index) //1
 ```
-+ . 任意字符
+#### . 任意字符
 匹配除换行符 \n 之外的任何单字符
-+ \d 数字
+#### \d 数字
 [0-9]
-+ \D 非数字
+#### \D 非数字
 匹配非数字的所有字符 [^0-9]
-+ \w 英文 数字 下划线
+#### \w 英文 数字 下划线
 [a-z0-9_]
-+ \W
+#### \W
 [^a-z0-9_] 非英文 数字 下划线
-+ \s 空格字符
-+ \S 非空格
-+ []
+#### \s 空格字符
+#### \S 非空格
+#### []
 [abc] 其中的任意一个字符
 ```javascript
 var str = 'rcp acp bcp dcp ccp ecp'
@@ -60,18 +60,18 @@ console.log(reg2.test('234')); //true
 console.log(reg2.test('234')); //false
 
 ```
-+ () 表示一个块
+#### () 表示一个块
 ```javascript
 //正确配一个座机号，区号可填可不填
 var reg = /^(0\d{2,3}-)?\d{7,8}$/
 console.log(reg.test('010-62276688')); //true
 console.log(reg.test('62276688')); //true
 ```
-+ ^
+#### ^
 行首（字符串的头部）
-+ $
+#### $
 行尾（字符串的尾部）
-+ | 或
+#### | 或
 ```javascript
 var str = 'rcp acp bcp dcp ccp ecp'
 var reg = /[a|b|c]cp/gi;;
@@ -84,7 +84,7 @@ console.log(str.match(reg)); //["acp", "bcp", "ccp"]
 + {n,}  最少n次 最多不限
 + '+'   相当于{1,}  -->最少1次 最多不限
 + ?     相当于{0,1} -->也就是可有可无
-+ *     相当于{0,}  -->也就是0次或多次 不推荐使用
++ '*'     相当于{0,}  -->也就是0次或多次 不推荐使用
 
 #### 贪婪 （* +）
 就是去匹配尽可能长的字符串
