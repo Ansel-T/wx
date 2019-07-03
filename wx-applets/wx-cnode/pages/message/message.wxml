@@ -1,23 +1,31 @@
 <!--message.wxml-->
-<view wx:if="{{has_read_messages && hasnot_read_messages}}" class="container ">
+<view class="navs">
+  <view></view>
+  <view></view>
+</view>
+<view wx:if="{{has_read_messages && hasnot_read_messages}}" class="container pl30 pr30">
   <view class='no-msg'>
-    <view class='msg-item'>
-      <view class='user-img'>
-        <image src="{{item.author.avatar_url}}" class="user-img left"></image>
+    <view class='msg-item '>
+      <view class="no-read mr10"></view>
+      <view class='mr20 user-img-box pt15'>
+        <image class="user-img" src="https://avatars3.githubusercontent.com/u/26264225?v=4&s=120"></image>
       </view>
-      <view>
-        <view class='msg-title'>
-          {{}}你发表的文章
-           <navigator url="/pages/topic/topic?id={{item.id}}" open-type="navigate" hover-class="none"></navigator>z
+      <view class="msg-d pt15 pb15">
+        <view class='msg-title f24'>
+
+          <navigator  url="/pages/topic/topic?id={{item.id}}" open-type="navigate" hover-class="none">
+              {{liangfengbo}}在话题 <text class="main-color">分享Node.js + Koa2 + MySQL + Vue.js 实战开发一套完整个人博客项目网站</text> 中@了你
+          </navigator>
+
         </view>
-        <text>7天前</text>
+        <text class="f24 color-666">7天前</text>
       </view>
     </view>
   </view>
   <view class='has-msg'>
 
   </view>
-  <view wx:if="{{has_read_messages.length > 0}} && {{hasnot_read_messages.length > 0}}" class='aC p100 f30 color-333'>
+  <view wx:if="{{has_read_messages.length === 0 && hasnot_read_messages.length === 0}}" class='aC p100 f30 color-333'>
     暂无消息!!!
   </view>
 </view>

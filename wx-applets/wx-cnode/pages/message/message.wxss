@@ -1,4 +1,7 @@
 /* pages/message/message.wxss */
+page{
+  /* background: #f5f5f5; */
+}
 .msg-nav{
   color:#fff;
   display: flex;
@@ -11,5 +14,28 @@
 
 .msg-item{
   display: flex;
-  justify-content: space-between;
+  /* align-items: center; */
+}
+.no-read{
+  width:20rpx;
+  height:20rpx;
+  border-radius: 50%;
+  background: #ec5278;
+  flex-shrink:0;
+  margin-top: 35rpx;
+}
+.user-img-box{
+  height:70rpx;
+}
+.user-img{
+  width:70rpx;
+  height:70rpx;
+  border-radius:10rpx;
+  box-sizing:border-box;
+}
+.msg-d{
+  border-bottom: 1rpx solid #e0e0e0;
+}
+.msg-title{
+  /* width: 400rpx; */
 }
